@@ -3,8 +3,13 @@ Gasoline::Application.routes.draw do
 
   devise_for :users, controllers: {registrations: "users/registrations"}
   
+  resources :profiles, only: [:show], controller: "users/profiles"
   
-  root :to => "stations#index"
+  resources :stations
+  
+  resources :locations
+  
+  root :to => "profiles#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

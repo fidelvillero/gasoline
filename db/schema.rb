@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111006150553) do
+ActiveRecord::Schema.define(:version => 20111006185338) do
 
   create_table "cars", :force => true do |t|
     t.string   "model"
@@ -22,7 +22,24 @@ ActiveRecord::Schema.define(:version => 20111006150553) do
     t.datetime "updated_at"
   end
 
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "stations", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "geolocation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
